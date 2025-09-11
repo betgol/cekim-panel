@@ -352,21 +352,12 @@ export default function PastWithdrawalsPage() {
               <SelectContent>
                 <SelectItem value="yetkili">Yetkili</SelectItem>
                 <SelectItem value="Çekim Botu">Çekim Botu</SelectItem>
-                <SelectItem value="Burcu">Burcu</SelectItem>
-                <SelectItem value="Berkin">Berkin</SelectItem>
-                <SelectItem value="Yüce">Yüce</SelectItem>
-                <SelectItem value="Batuhan">Batuhan</SelectItem>
-                <SelectItem value="Çiğdem">Çiğdem</SelectItem>
-                <SelectItem value="Serkan">Serkan</SelectItem>
-                <SelectItem value="Mert">Mert</SelectItem>
-                <SelectItem value="Soner">Soner</SelectItem>
-                <SelectItem value="Cansu">Cansu</SelectItem>
-                <SelectItem value="Oya">Oya</SelectItem>
-                <SelectItem value="Atlas">Atlas</SelectItem>
-                <SelectItem value="Eray">Eray</SelectItem>
-                <SelectItem value="Yusuf">Yusuf</SelectItem>
-                <SelectItem value="Çağrı">Çağrı</SelectItem>
-                <SelectItem value="Leyla">Leyla</SelectItem>
+                <SelectItem value="ORHUN">ORHUN</SelectItem>
+                <SelectItem value="TALAT">TALAT</SelectItem>
+                <SelectItem value="SARP">SARP</SelectItem>
+                <SelectItem value="SABRİ">SABRİ</SelectItem>
+                <SelectItem value="METİN">METİN</SelectItem>
+                <SelectItem value="CÜNEYT">CÜNEYT</SelectItem>
               </SelectContent>
             </Select>
           </div>
