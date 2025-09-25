@@ -1447,15 +1447,15 @@ export default function WithdrawPage() {
                                   </Button>
                                 </DropdownMenuTrigger>
                                 <DropdownMenuContent side="right" align="center">
-                                  <DropdownMenuItem onClick={() => handleActionSelect(withdrawal.id, "approve")}>
+                                  <DropdownMenuItem onClick={() => handleActionSelect(withdrawal.id, "approve")} className="text-green-600">
                                     ONAY
                                   </DropdownMenuItem>
-                                  <DropdownMenuItem onClick={() => handleActionSelect(withdrawal.id, "manuelApprove")}>
-                                    MANUEL - ONAY
+                                  <DropdownMenuItem onClick={() => handleActionSelect(withdrawal.id, "reject")} className="text-red-600">
+                                    RET
                                   </DropdownMenuItem>
                                   <DropdownMenuSeparator />
-                                  <DropdownMenuItem onClick={() => handleActionSelect(withdrawal.id, "reject")}>
-                                    RET
+                                  <DropdownMenuItem onClick={() => handleActionSelect(withdrawal.id, "manuelApprove")}>
+                                    MANUEL - ONAY
                                   </DropdownMenuItem>
                                   <DropdownMenuItem onClick={() => handleActionSelect(withdrawal.id, "manuelReject")}>
                                     MANUEL - RET
