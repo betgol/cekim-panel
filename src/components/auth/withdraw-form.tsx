@@ -1222,10 +1222,11 @@ export default function WithdrawPage() {
     formData.append("action", action)
     if (setBalance) formData.append("setBalance", "true");
     if (customBalance !== undefined) formData.append("customBalance", customBalance.toString());
-    if (note) formData.append("note", note)
     if (deleteRemainingBalance) formData.append("deleteRemainingBalance", "true")
     if (selectedRejectReason) formData.append("rejectReason", selectedRejectReason)
-    if (Object.keys(formValues).length > 0) {
+    if (note) {
+      formData.append("additionalInfo", note)
+    } else if (Object.keys(formValues).length > 0) {
       formData.append("additionalInfo", JSON.stringify(formValues))
     }
 
