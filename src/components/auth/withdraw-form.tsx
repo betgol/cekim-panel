@@ -110,7 +110,14 @@ const rejectionCategories: { [key: string]: { [subKey: string]: string[] } | str
   },
   "Yöntem Sorunu": [
     "yontem_sorunu"
+  ],
+  "TC Hata": [
+    "tc_hata"
   ]
+}
+
+function getDefaultAdditionalInfo(reason: string): string {
+  return translateRejectReason(reason);
 }
 
 // Ret sebeplerini çeviri fonksiyonu
@@ -185,7 +192,7 @@ const AnaparaCevrimFields: React.FC<{ formValues: FormValues; setFormValues: Rea
       <Textarea
         id="additionalInfo"
         name="additionalInfo"
-        value={formValues.additionalInfo || ""}
+        value={formValues.additionalInfo || getDefaultAdditionalInfo("anapara_cevrim")}
         onChange={(e) =>
           setFormValues((prev) => ({
             ...prev,
@@ -227,7 +234,7 @@ const AcikBonusCevrimFields: React.FC<{ formValues: FormValues; setFormValues: R
       <Textarea
         id="additionalInfo"
         name="additionalInfo"
-        value={formValues.additionalInfo || ""}
+        value={formValues.additionalInfo || getDefaultAdditionalInfo("acik_bonus_cevrim")}
         onChange={(e) =>
           setFormValues((prev) => ({
             ...prev,
@@ -269,7 +276,7 @@ const AcikBahisCevrimFields: React.FC<{ formValues: FormValues; setFormValues: R
       <Textarea
         id="additionalInfo"
         name="additionalInfo"
-        value={formValues.additionalInfo || ""}
+        value={formValues.additionalInfo || getDefaultAdditionalInfo("acik_bahis_cevrim")}
         onChange={(e) =>
           setFormValues((prev) => ({
             ...prev,
@@ -346,7 +353,7 @@ const CokluHesapFields: React.FC<{ formValues: FormValues; setFormValues: React.
       <Textarea
         id="additionalInfo"
         name="additionalInfo"
-        value={formValues.additionalInfo || ""}
+        value={formValues.additionalInfo || getDefaultAdditionalInfo("coklu_hesap")}
         onChange={(e) => {
           const value = e.target.value;
           const valuesArray = value.trim().split(" ").filter(Boolean);
@@ -426,7 +433,7 @@ const IpCokluFields: React.FC<{ formValues: FormValues; setFormValues: React.Dis
       <Textarea
         id="additionalInfo"
         name="additionalInfo"
-        value={formValues.additionalInfo || ""}
+        value={formValues.additionalInfo || getDefaultAdditionalInfo("ip_coklu")}
         onChange={(e) => {
           const value = e.target.value;
           const valuesArray = value.trim().split(" ").filter(Boolean);
@@ -506,7 +513,7 @@ const AyniAileCokluFields: React.FC<{ formValues: FormValues; setFormValues: Rea
       <Textarea
         id="additionalInfo"
         name="additionalInfo"
-        value={formValues.additionalInfo || ""}
+        value={formValues.additionalInfo || getDefaultAdditionalInfo("ayni_aile_coklu")}
         onChange={(e) => {
           const value = e.target.value;
           const valuesArray = value.trim().split(" ").filter(Boolean);
@@ -532,7 +539,7 @@ const DenemeSinirFields: React.FC<{ formValues: FormValues; setFormValues: React
       <Textarea
         id="additionalInfo"
         name="additionalInfo"
-        value={formValues.additionalInfo || ""}
+        value={formValues.additionalInfo || getDefaultAdditionalInfo("deneme_sinir")}
         onChange={(e) =>
           setFormValues((prev) => ({
             ...prev,
@@ -555,7 +562,7 @@ const CallSinirFields: React.FC<{ formValues: FormValues; setFormValues: React.D
       <Textarea
         id="additionalInfo"
         name="additionalInfo"
-        value={formValues.additionalInfo || ""}
+        value={formValues.additionalInfo || getDefaultAdditionalInfo("call_siniri")}
         onChange={(e) =>
           setFormValues((prev) => ({
             ...prev,
@@ -578,7 +585,7 @@ const PromosyonSinirFields: React.FC<{ formValues: FormValues; setFormValues: Re
       <Textarea
         id="additionalInfo"
         name="additionalInfo"
-        value={formValues.additionalInfo || ""}
+        value={formValues.additionalInfo || getDefaultAdditionalInfo("promosyon_sinir")}
         onChange={(e) =>
           setFormValues((prev) => ({
             ...prev,
@@ -601,7 +608,7 @@ const YatirimSinirFields: React.FC<{ formValues: FormValues; setFormValues: Reac
       <Textarea
         id="additionalInfo"
         name="additionalInfo"
-        value={formValues.additionalInfo || ""}
+        value={formValues.additionalInfo || getDefaultAdditionalInfo("yatirim_sinir")}
         onChange={(e) =>
           setFormValues((prev) => ({
             ...prev,
@@ -624,7 +631,7 @@ const HediyeSinirFields: React.FC<{ formValues: FormValues; setFormValues: React
       <Textarea
         id="additionalInfo"
         name="additionalInfo"
-        value={formValues.additionalInfo || ""}
+        value={formValues.additionalInfo || getDefaultAdditionalInfo("hediye_sinir")}
         onChange={(e) =>
           setFormValues((prev) => ({
             ...prev,
@@ -647,7 +654,7 @@ const BonusSinirFields: React.FC<{ formValues: FormValues; setFormValues: React.
       <Textarea
         id="additionalInfo"
         name="additionalInfo"
-        value={formValues.additionalInfo || ""}
+        value={formValues.additionalInfo || getDefaultAdditionalInfo("bonus_sinir")}
         onChange={(e) =>
           setFormValues((prev) => ({
             ...prev,
@@ -670,7 +677,7 @@ const SafeBahisFields: React.FC<{ formValues: FormValues; setFormValues: React.D
       <Textarea
         id="additionalInfo"
         name="additionalInfo"
-        value={formValues.additionalInfo || ""}
+        value={formValues.additionalInfo || getDefaultAdditionalInfo("safe_bahis")}
         onChange={(e) =>
           setFormValues((prev) => ({
             ...prev,
@@ -693,7 +700,7 @@ const KurmaBahisFields: React.FC<{ formValues: FormValues; setFormValues: React.
       <Textarea
         id="additionalInfo"
         name="additionalInfo"
-        value={formValues.additionalInfo || ""}
+        value={formValues.additionalInfo || getDefaultAdditionalInfo("kurma_bahis")}
         onChange={(e) =>
           setFormValues((prev) => ({
             ...prev,
@@ -716,7 +723,7 @@ const Bire1BahisFields: React.FC<{ formValues: FormValues; setFormValues: React.
       <Textarea
         id="additionalInfo"
         name="additionalInfo"
-        value={formValues.additionalInfo || ""}
+        value={formValues.additionalInfo || getDefaultAdditionalInfo("bire1_bahis")}
         onChange={(e) =>
           setFormValues((prev) => ({
             ...prev,
@@ -739,7 +746,7 @@ const CasinoKurmaBahisFields: React.FC<{ formValues: FormValues; setFormValues: 
       <Textarea
         id="additionalInfo"
         name="additionalInfo"
-        value={formValues.additionalInfo || ""}
+        value={formValues.additionalInfo || getDefaultAdditionalInfo("casino_kurma_bahis")}
         onChange={(e) =>
           setFormValues((prev) => ({
             ...prev,
@@ -762,7 +769,7 @@ const OzelOyunKontrolFields: React.FC<{ formValues: FormValues; setFormValues: R
       <Textarea
         id="additionalInfo"
         name="additionalInfo"
-        value={formValues.additionalInfo || ""}
+        value={formValues.additionalInfo || getDefaultAdditionalInfo("ozel_oyun_kontrol")}
         onChange={(e) =>
           setFormValues((prev) => ({
             ...prev,
@@ -785,7 +792,7 @@ const YatirimBonusSuistimalFields: React.FC<{ formValues: FormValues; setFormVal
       <Textarea
         id="additionalInfo"
         name="additionalInfo"
-        value={formValues.additionalInfo || ""}
+        value={formValues.additionalInfo || getDefaultAdditionalInfo("yatirim_bonus_suistimal")}
         onChange={(e) =>
           setFormValues((prev) => ({
             ...prev,
@@ -808,7 +815,7 @@ const CashbackSuistimalFields: React.FC<{ formValues: FormValues; setFormValues:
       <Textarea
         id="additionalInfo"
         name="additionalInfo"
-        value={formValues.additionalInfo || ""}
+        value={formValues.additionalInfo || getDefaultAdditionalInfo("cashback_suistimal")}
         onChange={(e) =>
           setFormValues((prev) => ({
             ...prev,
@@ -831,7 +838,7 @@ const DenemeSuistimalFields: React.FC<{ formValues: FormValues; setFormValues: R
       <Textarea
         id="additionalInfo"
         name="additionalInfo"
-        value={formValues.additionalInfo || ""}
+        value={formValues.additionalInfo || getDefaultAdditionalInfo("deneme_suistimal")}
         onChange={(e) =>
           setFormValues((prev) => ({
             ...prev,
@@ -854,7 +861,7 @@ const HediyeSuistimalFields: React.FC<{ formValues: FormValues; setFormValues: R
       <Textarea
         id="additionalInfo"
         name="additionalInfo"
-        value={formValues.additionalInfo || ""}
+        value={formValues.additionalInfo || getDefaultAdditionalInfo("hediye_suistimal")}
         onChange={(e) =>
           setFormValues((prev) => ({
             ...prev,
@@ -877,7 +884,30 @@ const YontemSorunuFields: React.FC<{ formValues: FormValues; setFormValues: Reac
       <Textarea
         id="additionalInfo"
         name="additionalInfo"
-        value={formValues.additionalInfo || ""}
+        value={formValues.additionalInfo || getDefaultAdditionalInfo("yontem_sorunu")}
+        onChange={(e) =>
+          setFormValues((prev) => ({
+            ...prev,
+            additionalInfo: e.target.value,
+          }))
+        }
+        placeholder="Ek Bilgi"
+        className="w-full resize-none"
+      />
+    </div>
+  </div>
+);
+
+const TcHataFields: React.FC<{ formValues: FormValues; setFormValues: React.Dispatch<React.SetStateAction<FormValues>> }> = ({ formValues, setFormValues }) => (
+  <div className="space-y-4">
+    <div className="space-y-2">
+      <Label htmlFor="additionalInfo" className="text-left">
+        Ek Bilgi
+      </Label>
+      <Textarea
+        id="additionalInfo"
+        name="additionalInfo"
+        value={formValues.additionalInfo || getDefaultAdditionalInfo("tc_hata")}
         onChange={(e) =>
           setFormValues((prev) => ({
             ...prev,
@@ -914,6 +944,7 @@ const rejectionFieldComponents = {
   deneme_suistimal: DenemeSuistimalFields,
   hediye_suistimal: HediyeSuistimalFields,
   yontem_sorunu: YontemSorunuFields,
+  tc_hata: TcHataFields,
 };
 
 const getStatusColor = (status: string) => {
