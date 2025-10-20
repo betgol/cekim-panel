@@ -69,6 +69,7 @@ interface FormValues {
   coklu?: string
   kapaCoklu?: string
   silCoklu?: string
+  isDefaultSet?: boolean
 }
 
 // Kategoriler
@@ -353,14 +354,12 @@ const CokluHesapFields: React.FC<{ formValues: FormValues; setFormValues: React.
       <Textarea
         id="additionalInfo"
         name="additionalInfo"
-        value={formValues.additionalInfo || getDefaultAdditionalInfo("coklu_hesap")}
+        value={formValues.additionalInfo !== undefined ? formValues.additionalInfo : getDefaultAdditionalInfo("coklu_hesap")}
         onChange={(e) => {
-          const value = e.target.value;
-          const valuesArray = value.trim().split(" ").filter(Boolean);
-          const joinedValue = valuesArray.join(", ");
           setFormValues((prev) => ({
             ...prev,
-            additionalInfo: joinedValue,
+            additionalInfo: e.target.value,
+            isDefaultSet: true,
           }));
         }}
         placeholder="Ek Bilgi"
@@ -433,14 +432,12 @@ const IpCokluFields: React.FC<{ formValues: FormValues; setFormValues: React.Dis
       <Textarea
         id="additionalInfo"
         name="additionalInfo"
-        value={formValues.additionalInfo || getDefaultAdditionalInfo("ip_coklu")}
+        value={formValues.additionalInfo !== undefined ? formValues.additionalInfo : getDefaultAdditionalInfo("ip_coklu")}
         onChange={(e) => {
-          const value = e.target.value;
-          const valuesArray = value.trim().split(" ").filter(Boolean);
-          const joinedValue = valuesArray.join(", ");
           setFormValues((prev) => ({
             ...prev,
-            additionalInfo: joinedValue,
+            additionalInfo: e.target.value,
+            isDefaultSet: true,
           }));
         }}
         placeholder="Ek Bilgi"
@@ -513,14 +510,12 @@ const AyniAileCokluFields: React.FC<{ formValues: FormValues; setFormValues: Rea
       <Textarea
         id="additionalInfo"
         name="additionalInfo"
-        value={formValues.additionalInfo || getDefaultAdditionalInfo("ayni_aile_coklu")}
+        value={formValues.additionalInfo !== undefined ? formValues.additionalInfo : getDefaultAdditionalInfo("ayni_aile_coklu")}
         onChange={(e) => {
-          const value = e.target.value;
-          const valuesArray = value.trim().split(" ").filter(Boolean);
-          const joinedValue = valuesArray.join(", ");
           setFormValues((prev) => ({
             ...prev,
-            additionalInfo: joinedValue,
+            additionalInfo: e.target.value,
+            isDefaultSet: true,
           }));
         }}
         placeholder="Ek Bilgi"
